@@ -15,9 +15,9 @@ variable "whitelist_outgoing" {
 }
 
 variable "allow_outgoing_http" {
-  type        = string
+  type        = bool
   description = "Whether to allow outgoing HTTP requests"
-  default     = "0"
+  default     = false
 }
 
 variable "prefix" {

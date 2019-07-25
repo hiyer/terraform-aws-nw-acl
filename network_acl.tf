@@ -42,7 +42,7 @@ resource "aws_network_acl_rule" "ssh_out" {
 
 # HTTP out
 resource "aws_network_acl_rule" "http_out" {
-  count          = var.whitelist_outgoing != "" && var.allow_outgoing_http != "0" ? 1 : 0
+  count          = var.whitelist_outgoing != "" && var.allow_outgoing_http = true ? 1 : 0
   network_acl_id = aws_network_acl.default.id
   egress         = true
   protocol       = "tcp"
